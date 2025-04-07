@@ -37,7 +37,7 @@ cd scLENS # 작업을 원하는 디렉토리로 설정 가능
 
 ---
 
-### 3. 환경 설정 (Julia REPL)
+### 3. julia 실행
 
 ```julia
 import Pkg
