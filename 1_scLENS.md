@@ -39,7 +39,7 @@ cd scLENS # 작업을 원하는 디렉토리로 설정 가능
 
 ### 3. julia 실행
 
-```
+```bash
 import Pkg
 Pkg.activate(".")       # scLENS 폴더를 경로로 설정 (앞서 설정한 디렉토리가 scLENS일 경우 ".")
 Pkg.instantiate()       # 의존성 패키지 설치, GPU가 없을 경우 CUDA로 인한 defendency 오류 발생 하지만 무시 가능
@@ -47,7 +47,7 @@ Pkg.instantiate()       # 의존성 패키지 설치, GPU가 없을 경우 CUDA�
 
 ‼️ Optional: GPU를 사용하지 않는 경우 `CUDA` 제거 가능:
 
-```
+```bash
 Pkg.rm("CUDA") 
 Pkg.resolve()
 ```
@@ -64,7 +64,7 @@ scLENS는 다음 포맷을 지원합니다:
 
 ### 예: 10X 형식을 jld2로 변환
 
-```
+```bash
 using scLENS
 scLENS.tenx2jld2("경로/10x", "경로/저장파일명.jld2")
 ```
@@ -73,12 +73,12 @@ scLENS.tenx2jld2("경로/10x", "경로/저장파일명.jld2")
 
 ## 🧦 분석 실행
 
-```
+```bash
 using scLENS
 
 # GPU가 있다면 자동 감지
 cur_dev = has_cuda() ? "gpu" : "cpu"
-
+```
 #jld 파일 생성
 ```
 # Import necessary packages
@@ -100,7 +100,7 @@ sclens_embedding = scLENS.sclens(pre_df, device_=cur_dev)
 
 ## 📊 시각화 및 결과 저장
 
-```
+```bash
 # MP 분포 및 군집 안정성 확인
 scLENS.plot_mpdist(sclens_embedding)
 scLENS.plot_stability(sclens_embedding)
