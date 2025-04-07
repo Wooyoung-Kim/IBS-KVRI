@@ -38,6 +38,11 @@ cd scLENS # 작업을 원하는 디렉토리로 설정 가능
 ---
 
 ### 3. julia 실행
+```bash
+import Pkg
+Pkg.add("IJulia")
+using IJulia
+jupyterlab() # 처음 실행시 줄리아 내부의 miniconda 기반으로 jupyter notebook 설치 (conda lisence 사용이 아닌 Miniconda)
 
 ```bash
 import Pkg
